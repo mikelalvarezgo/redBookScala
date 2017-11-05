@@ -3,16 +3,18 @@ package chapter2
 
 object Exercise2 extends App{
 
-  def fibonnacci(n:Int):Int = {
-    def step(n: Int,prev: Int, next: Int):Int = n match{
-      case 0 => prev
-      case 1 => next
-      case _ => step(n -1, next, prev + next)
+  def isSortered[A](as: Array[A], ordered: (A,A) => Boolean):Boolean = {
+
+    def step(n:Int):Boolean = {
+      if(n == as.size-1) {
+        ordered(as(n-1), as(n))
+      }else {
+        if (ordered(as(n-2), as(n-1)))
+          step(n +1)
+        else false
+      }
     }
-    step(n, 0, 1)
+    step(1)
   }
 
-  println("[FIBONACCI] Introduce number for calculate fibonacci sequence")
-  val n = scala.io.StdIn.readInt()
-  println(s"[FIBONACCI] Fibonacci number of $n  is ${fibonnacci(n)}")
 }
