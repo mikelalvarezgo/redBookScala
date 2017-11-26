@@ -4,7 +4,7 @@
 		module="theredbookexercises$sources_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20171118124356"
+		publication="20171121120636"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
